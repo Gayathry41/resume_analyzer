@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CViator - Analyze Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      color: white !important;
+      margin-right: 20px;
+    }
+    .center-content {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">CViator</a>
+    <div class="ml-auto d-flex">
+      <a class="nav-link" href="{{ url_for('index') }}">Dashboard</a>
+      <a class="nav-link" href="{{ url_for('analyze') }}">Analyzer</a>
+      <a class="nav-link" href="#">Generator</a>
+      <a class="nav-link" href="#">Login</a>
+    </div>
+  </nav>
+
+  <!-- Centered Content -->
+  <!-- <div class="container mt-5 center-content">
+    <form method="post" enctype="multipart/form-data">
+        <label>Job Description:</label><br>
+        <textarea name="job_desc" rows="10" cols="80" required></textarea><br><br>
+
+        <label>Upload Resume (PDF):</label>
+        <input type="file" name="resume" accept=".pdf" required><br><br>
+
+        <button type="submit" name="mode" value="review">Tell Me About the Resume</button>
+        <button type="submit" name="mode" value="match">Percentage Match</button>
+    </form>
+  </div> -->
+<div class="container mt-5 center-content flex-column">
+  <form method="post" enctype="multipart/form-data" class="w-100 text-center">
+      <label>Job Description:</label><br>
+      <textarea name="job_desc" rows="10" cols="80" required></textarea><br><br>
+
+      <label>Upload Resume (PDF):</label>
+      <input type="file" name="resume" accept=".pdf" required><br><br>
+
+      <button type="submit" name="mode" value="review" class="btn btn-primary">Tell Me About the Resume</button>
+      <button type="submit" name="mode" value="match" class="btn btn-success">Percentage Match</button>
+  </form>
+
+  {% if result %}
+    <div class="mt-4 alert alert-info w-100 text-center" style="white-space: pre-line;">
+      {{ result | safe }}
+    </div>
+  {% endif %}
+</div>
+
+</body>
+</html>
