@@ -38,40 +38,63 @@
       <a class="nav-link" href="#">Login</a>
     </div>
   </nav>
-
-  <!-- Dashboard Grid with 3 Cards -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Resume Analyzer</h5>
-            <p class="card-text">Analyze your resume and get improvement suggestions instantly.</p>
-            <a href="{{ url_for('analyze') }}" class="btn btn-primary mt-auto">Analyze Now</a>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Resume Generator</h5>
-            <p class="card-text">Generate a professional resume based on your input data.</p>
-            <a href="/generate" class="btn btn-primary mt-auto">Generate Resume</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Job Matcher</h5>
-            <p class="card-text">Find jobs that best match your resume profile and skills.</p>
-            <a href="/match" class="btn btn-primary mt-auto">Find Jobs</a>
-          </div>
+<!-- Dashboard Grid with 3 Cards -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Resume Analyzer</h5>
+          <p class="card-text">Analyze your resume and get improvement suggestions instantly.</p>
+          <a href="{{ url_for('analyze') }}" class="btn btn-primary mt-auto">Analyze Now</a>
         </div>
       </div>
     </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Resume Generator</h5>
+          <p class="card-text">Generate a professional resume based on your input data.</p>
+          <a href="/generate" class="btn btn-primary mt-auto">Generate Resume</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Job Matcher</h5>
+          <p class="card-text">Find jobs that best match your resume profile and skills.</p>
+          <button onclick="showMatchSection()" class="btn btn-primary mt-auto">Find Jobs</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End of card row -->
+
+  <!-- 🆕 Full-width job match section (new row) -->
+  <div class="row">
+    <div class="col-12">
+      <div id="jobMatchSection" class="card shadow p-4 mt-4" style="display: none;">
+        <h4>Job Match Results</h4>
+        <p>This section will display job matches based on your resume.</p>
+      </div>
+    </div>
   </div>
+</div> <!-- End of container -->
+
+
+
+<script>
+  function showMatchSection() {
+    document.getElementById("jobMatchSection").style.display = "block";
+    // Optional: scroll into view
+    document.getElementById("jobMatchSection").scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
