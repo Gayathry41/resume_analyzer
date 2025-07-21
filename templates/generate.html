@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Generator - CViator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .editor {
+      background-color: #ffffff;
+      border: 1px solid #ced4da;
+      padding: 20px;
+      min-height: 400px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">CViator</a>
+    <div class="ml-auto d-flex">
+      <a class="nav-link" href="{{ url_for('index') }}">Dashboard</a>
+      <a class="nav-link" href="{{ url_for('analyze') }}">Analyzer</a>
+      <a class="nav-link" href="{{ url_for('generate') }}">Generator</a>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h3 class="text-center">LaTeX Resume Builder</h3>
+
+    <div class="mb-3 text-center">
+      <button class="btn btn-outline-primary" onclick="insertSection()">Add Section</button>
+      <button class="btn btn-outline-secondary" onclick="insertItem()">Add Item</button>
+      <button class="btn btn-outline-success" onclick="insertEducation()">Add Education</button>
+      <button class="btn btn-outline-info" onclick="insertExperience()">Add Experience</button>
+      <button class="btn btn-outline-warning" onclick="insertSkill()">Add Skill</button>
+      <button class="btn btn-dark" onclick="generateLatex()">Generate LaTeX</button>
+    </div>
+
+    <div id="editor" class="editor" contenteditable="true">
+      % Start writing your LaTeX resume here...
+    </div>
+
+    <form id="latexForm" method="POST" action="{{ url_for('download_latex') }}">
+      <input type="hidden" name="latex_code" id="latex_code">
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/generator.js') }}"></script>
+</body>
+</html>

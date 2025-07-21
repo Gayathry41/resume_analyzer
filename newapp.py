@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash,send_file
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 import os
@@ -31,7 +31,20 @@ def allowed_file(filename):
 def index():
     return render_template("index.html")
 
-@app.route("/analyze", methods=["GET", "POST"])
+
+@app.route("/generate", methods=["GET", "POST"])
+def generate():
+    return render_template("generate.html")
+@app.route("/download-latex", methods=["POST"])
+def download_latex():
+    latex_code = request.form.get("latex_code")
+    file_path = os.path.join("uploads", "resume.tex")
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(latex_code)
+    return send_file(file_path, as_attachment=True)
+
+# @app.route("/analyze", methods=["GET", "POST"])
+
 # def analyze():
 #     if request.method == "POST":
 #         job_desc = request.form.get("job_desc")
