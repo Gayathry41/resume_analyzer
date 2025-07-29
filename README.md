@@ -75,7 +75,7 @@ CViator is an end-to-end resume intelligence toolkit that leverages **Gemini-1.5
 2. Add your Gemini API key to `.env`
 3. Train (or load) the fine-tuned BERT model
 4. Run the Flask server:
-   ```bash
+```bash
    python app.py
 ```
 
@@ -83,32 +83,30 @@ CViator is an end-to-end resume intelligence toolkit that leverages **Gemini-1.5
 Access localhost:5000 in your browser
 
 ## 📷 Screenshots
-Resume Upload Page
+- Resume Upload Page
 
-## JD Skill Extractor (BERT)
+-JD Skill Extractor (BERT)
 
-Interactive LaTeX Resume Builder
+- Interactive LaTeX Resume Builder
 
-Final Resume PDF Output
+- Final Resume PDF Output
 
 ## 🛠️ Future Enhancements
-Add support for multiple resume templates
+- Add support for multiple resume templates
 
-Integrate OpenAI GPT-based suggestions
+- Integrate OpenAI GPT-based suggestions
 
-Improve drag-and-drop editor UX
+- Improve drag-and-drop editor UX
 
-Add dark mode for builder interface
+- Add dark mode for builder interface
 
 ## 🙌 Credits
-Google Gemini API
+- Google Gemini API
 
-HuggingFace Transformers
+- HuggingFace Transformers
 
-scikit-learn, seqeval
+- scikit-learn, seqeval
 
-Flask, Bootstrap, pdflatex
+- Flask, Bootstrap, pdflatex
 
-css
-Copy
-Edit
+
