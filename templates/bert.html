@@ -38,25 +38,26 @@
       <a class="nav-link" href="#">Login</a>
     </div>
   </nav>
-
-<!-- Main Content Area -->
-<div class="container mt-4">
-  <h2 class="text-center mb-4">AI-Powered Resume Extractor</h2>
-
-  <form method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm bg-white">
-    <div class="mb-3">
-      <label for="resume" class="form-label">Upload Resume (PDF Only)</label>
-      <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" required>
+<div class="container mt-5">
+  <h2>Extract Skills from Job Description (BERT)</h2>
+  <form method="POST">
+    <div class="form-group">
+      <label for="jobdesc">Enter Job Description</label>
+      <textarea class="form-control" name="jobdesc" rows="8" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Extract</button>
+    <button type="submit" class="btn btn-primary">Extract Skills</button>
   </form>
 
-  {% if result %}
-  <hr class="my-4">
-  <h5>📄 Extracted Resume Data (JSON):</h5>
-  <pre>{{ result }}</pre>
+  {% if skills %}
+    <hr>
+    <h4>Extracted Skills:</h4>
+    <ul>
+      {% for skill in skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('static', filename='skills_output.json') }}" class="btn btn-success mt-2" download>Download JSON</a>
   {% endif %}
 </div>
-
 </body>
 </html>

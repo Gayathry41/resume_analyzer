@@ -55,9 +55,9 @@
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Resume Generator</h5>
-            <p class="card-text">Generate a professional resume based on your input data.</p>
-            <a href="{{ url_for('generate') }}" class="btn btn-primary mt-auto">Generate Resume</a>
+            <h5 class="card-title">Resume Extraction</h5>
+            <p class="card-text">Extract skills from Resume as a json file</p>
+            <a href="{{ url_for('generate') }}" class="btn btn-primary mt-auto">Extract json</a>
 
           </div>
         </div>
@@ -65,12 +65,23 @@
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Job Matcher</h5>
-            <p class="card-text">Find jobs that best match your resume profile and skills.</p>
-            <a href="/match" class="btn btn-primary mt-auto">Find Jobs</a>
+            <h5 class="card-title">Skill Extraction</h5>
+            <p class="card-text">Extract skills directly mentioned in job description</p>
+            <a href="{{ url_for('bert') }}" class="btn btn-primary mt-auto">bert</a>
           </div>
         </div>
       </div>
+         <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Resume generation</h5>
+            <p class="card-text">Create latex and render to pdf</p>
+            <a href="{{ url_for('resume_gen') }}" class="btn btn-primary mt-auto">generate</a>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
