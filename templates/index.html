@@ -29,15 +29,21 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">CViator</a>
-    <div class="ml-auto d-flex">
-      <a class="nav-link" href="#">Dashboard</a>
-      <a class="nav-link" href="#">Analyzer</a>
-      <a class="nav-link" href="#">Generator</a>
-      <a class="nav-link" href="#">Login</a>
-    </div>
-  </nav>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand d-flex align-items-center p-0" href="#" style="height: 100%;">
+    <img src="{{ url_for('static', filename='tp.png') }}" 
+         alt="CViator Logo" class="h-100" style="max-height: 60px;">
+  </a>
+
+  <div class="ml-auto d-flex align-items-center">
+    <a class="nav-link" href="#">Dashboard</a>
+    <a class="nav-link" href="#">Analyzer</a>
+    <a class="nav-link" href="#">Generator</a>
+    <a class="nav-link" href="#">Login</a>
+  </div>
+</nav>
+
 
   <!-- Dashboard Grid with 3 Cards -->
   <div class="container mt-5">

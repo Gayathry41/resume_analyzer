@@ -85,7 +85,7 @@ Access localhost:5000 in your browser
 ## 📷 Screenshots
 - Resume Upload Page
 
--JD Skill Extractor (BERT)
+- JD Skill Extractor (BERT)
 
 - Interactive LaTeX Resume Builder
 
