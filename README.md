@@ -83,7 +83,7 @@ CViator is an end-to-end resume intelligence toolkit that leverages **Gemini-1.5
 Access localhost:5000 in your browser
 
 ## 📷 Screenshots
-- Resume Upload Page
+- SAMPLE DASHBOARD
 ![](static/imgs/db.png)
 - JD Skill Extractor (BERT)
 
